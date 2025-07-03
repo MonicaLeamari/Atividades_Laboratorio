@@ -1,5 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*, br.com.atividade3.Banco" %>
+<meta charset="UTF-8">
+
 <html>
 <head>
     <title>Lista de Bancos</title>
@@ -36,20 +38,21 @@
             box-sizing: border-box;
         }
 
-        input[type="submit"] {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 16px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+        input[type="submit"],
+input[type="button"] {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-        input[type="submit"]:hover {
-            background-color: #2980b9;
-        }
-
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #2980b9;
+}
         table {
             width: 100%;
             border-collapse: collapse;
@@ -133,7 +136,7 @@
                 </td>
 
                 <td>
-                    <button type="button" id="btnEditar_<%= banco.getId() %>" onclick="habilitarEdicao(<%= banco.getId() %>)">Editar</button>
+                    <input type="button" id="btnEditar_<%= banco.getId() %>" value="Editar" onclick="habilitarEdicao(<%= banco.getId() %>)">
                     <input type="submit" id="btnSalvar_<%= banco.getId() %>" value="Salvar" style="display:none;">
                 </td>
             </form>
