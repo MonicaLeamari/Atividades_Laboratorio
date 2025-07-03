@@ -1,5 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*, br.com.atividade3.Banco" %>
+<jsp:useBean id="bancoBean" class="br.com.atividade3.Banco" scope="request" />
+<%
+    List<Banco> bancos = bancoBean.getLista();
+%>
 <meta charset="UTF-8">
 
 <html>
@@ -117,7 +121,7 @@ input[type="button"]:hover {
         </tr>
 
         <%
-            List<Banco> bancos = (List<Banco>) request.getAttribute("banco");
+            List<Banco> a1 = (List<Banco>) request.getAttribute("banco");
             for (Banco banco : bancos) {
         %>
         <tr>
@@ -131,8 +135,8 @@ input[type="button"]:hover {
                 </td>
 
                 <td>
-                    <span id="data_<%= banco.getId() %>"><%= banco.getDataNascimento() %></span>
-                    <input type="date" name="data_nascimento" id="dataInput_<%= banco.getId() %>" value="<%= banco.getDataNascimento() %>" style="display:none;">
+                    <span id="data_<%= banco.getId() %>"><%= banco.getData_nascimento() %></span>
+                    <input type="date" name="data_nascimento" id="dataInput_<%= banco.getId() %>" value="<%= banco.getData_nascimento() %>" style="display:none;">
                 </td>
 
                 <td>

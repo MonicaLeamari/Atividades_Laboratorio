@@ -16,7 +16,7 @@ public class BancoDAO {
              PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, banco.getNome());
-            ps.setDate(2, banco.getDataNascimento());
+            ps.setDate(2, banco.getData_nascimento());
             ps.executeUpdate();
         }
     }
@@ -27,7 +27,7 @@ public class BancoDAO {
              PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, banco.getNome());
-            ps.setDate(2, banco.getDataNascimento());
+            ps.setDate(2, banco.getData_nascimento());
             ps.setInt(3, banco.getId());
             ps.executeUpdate();
         }
@@ -55,7 +55,7 @@ public class BancoDAO {
                 return new Banco(
                     rs.getInt("id"),
                     rs.getString("nome"),
-                    rs.getDate("dataNascimento")
+                    rs.getDate("data_nascimento")
                 );
             }
         }
