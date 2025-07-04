@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
-<%@ page import="java.util.*, br.com.atividade5.Banco" %>
+<%@ page import="java.util.*,br.com.atividade5.Banco" %>
+<%@ page import="java.util.List" %>
+<%@ page import="br.com.atividade5.Banco" %>
 <meta charset="UTF-8">
 
 <html>
